@@ -7,8 +7,8 @@ xmlfilepath = r"/home/data/VOCdevkit/TV_LOGO_Dataset/Annotations"
 saveBasePath = r"/home/data/VOCdevkit/TV_LOGO_Dataset/ImageSets/Main"
 
 # 数据拆分比例
-trainval_percent = 0.7
-train_percent = 0.7
+trainval_percent = 0.8
+train_percent = 0.8
 total_xml = os.listdir(xmlfilepath)
 num = len(total_xml)
 list = range(num)
