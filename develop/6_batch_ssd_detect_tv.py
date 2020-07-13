@@ -8,7 +8,7 @@ import os
 import sys
 import argparse
 import numpy as np
-from PIL import Image, ImageDraw
+from PIL import Image, ImageDraw, ImageFont
 import time
 
 # Make sure that caffe is on the python path:
@@ -35,6 +35,24 @@ def get_labelname(labelmap, labels):
                 break
         assert found == True
     return labelnames
+
+
+def list_dir(dir_path):
+    """
+        递归读取文件
+    :param dir_path:根目录
+    :return:所有图片路径的list
+    """
+    img_list = []
+    dir_files = os.listdir(dir_path)  # 得到该文件夹下所有的文件
+    for file in dir_files:
+        file_path = os.path.join(dir_path, file)  # 路径拼接成绝对路径
+        if os.path.isfile(file_path):  # 如果是文件，就打印这个文件路径
+            if file_path.endswith(".jpg"):
+                img_list.append(file_path)
+        if os.path.isdir(file_path):  # 如果目录，就递归子目录
+            list_dir(img_list, file_path)
+    return img_list
 
 
 class CaffeDetection:
@@ -70,17 +88,15 @@ class CaffeDetection:
         self.net.blobs['data'].reshape(1, 3, self.image_resize, self.image_resize)
         image = caffe.io.load_image(image_file)
 
-	# HJR
-        start_time = time.time()
-
         # Run the net and examine the top_k results
         transformed_image = self.transformer.preprocess('data', image)
         self.net.blobs['data'].data[...] = transformed_image
 
+        # HJR
+        start_time = time.time()
         # Forward pass.
         detections = self.net.forward()['detection_out']
-	
-	# HJR
+        # HJR
         end_time = time.time()
         print("Detection time:%s" % (end_time - start_time))
 
@@ -118,25 +134,16 @@ class CaffeDetection:
 
 def main(args):
     """main """
-    detection = CaffeDetection(args.gpu_id,args.model_def, args.model_weights, args.image_resize, args.labelmap_file)
-    im_names = ['001.jpg', '002.jpg', '003.jpg', '004.jpg', '005.jpg', '006.jpg', '007.jpg', '008.jpg', '009.jpg',
-                '010.jpg', '011.jpg', '012.jpg', '013.jpg', '014.jpg', '015.jpg', '016.jpg', '017.jpg', '018.jpg',
-                '019.jpg', '020.jpg', '021.jpg', '022.jpg', '023.jpg', '024.jpg', '025.jpg', '026.jpg', '027.jpg',
-                '028.jpg', '029.jpg', '030.jpg', '031.jpg', '032.jpg', '033.jpg', '034.jpg', '035.jpg', '036.jpg',
-                '037.jpg', '038.jpg', '039.jpg', '040.jpg', '041.jpg', '042.jpg', '043.jpg', '044.jpg', '045.jpg',
-                '046.jpg', '047.jpg', '048.jpg', '049.jpg', '050.jpg', '051.jpg', '052.jpg', '053.jpg', '054.jpg',
-                '055.jpg', '056.jpg', '057.jpg', '058.jpg', '059.jpg', '060.jpg', '061.jpg', '062.jpg', '063.jpg',
-                '064.jpg', '065.jpg', '066.jpg', '067.jpg', '068.jpg', '069.jpg', '070.jpg', '071.jpg', '072.jpg',
-                '073.jpg', '074.jpg', '075.jpg', '076.jpg', '077.jpg', '078.jpg', '079.jpg', '080.jpg', '081.jpg',
-                '082.jpg', '083.jpg', '084.jpg', '085.jpg', '086.jpg', '087.jpg', '088.jpg', '089.jpg', '090.jpg',
-                '091.jpg', '092.jpg', '093.jpg', '094.jpg', '095.jpg', '096.jpg', '097.jpg', '098.jpg', '099.jpg',
-                '100.jpg']
+    detection = CaffeDetection(args.gpu_id, args.model_def, args.model_weights, args.image_resize, args.labelmap_file)
+    # im_names = ['001.jpg', '002.jpg', '003.jpg', '004.jpg', '005.jpg', '006.jpg', '007.jpg', '008.jpg', '009.jpg', '010.jpg']
+    im_names = list_dir("/home/P/")
+
     for im_name in im_names:
-        image_file = args.image_file + im_name
-        result = detection.detect(image_file)
+        # image_file = args.image_file + im_name
+        result = detection.detect(im_name)
         print result
 
-        img = Image.open(image_file)
+        img = Image.open(im_name)
         draw = ImageDraw.Draw(img)
         width, height = img.size
         print width, height
@@ -145,16 +152,16 @@ def main(args):
             ymin = int(round(item[1] * height))
             xmax = int(round(item[2] * width))
             ymax = int(round(item[3] * height))
+            font = ImageFont.truetype('/home/arial.ttf', 22)
             draw.rectangle([xmin, ymin, xmax, ymax], outline=(255, 0, 0))
-            draw.text([xmin, ymin], item[-1] + " " + str(item[-2]), (0, 0, 255))
-	    # 
-	                
+            draw.text([xmin, ymin], item[-1] + " " + str(item[-2]), (0, 0, 255), font=font)
+            #
 
             print item
             print [xmin, ymin, xmax, ymax]
             print [xmin, ymin], item[-1]
-        img.save(image_file[:-4] + '_dets.jpg')
-        print('Saved: ' + image_file[:-4] + '_dets.jpg')
+        img.save(im_name.split(".")[0] + '_dets.jpg')
+        print('Saved: ' + im_name.split(".")[0] + '_dets.jpg')
 
 
 # /opt/caffe/models/VGGNet/TV_LOGO/SSD_TV_LOGO_300x300/
@@ -166,8 +173,9 @@ def parse_args():
     parser.add_argument('--labelmap_file', default='/opt/caffe/data/VOCdevkit/TV_LOGO_Dataset/labelmap_voc.prototxt')
     parser.add_argument('--model_def', default='/opt/caffe/models/VGGNet/TV_LOGO/SSD_TV_LOGO_300x300/deploy.prototxt')
     parser.add_argument('--image_resize', default=300, type=int)
-    parser.add_argument('--model_weights', default='/opt/caffe/models/VGGNet/TV_LOGO/SSD_TV_LOGO_300x300/VGG_TV_LOGO_SSD_TV_LOGO_300x300_iter_21694.caffemodel')
-    parser.add_argument('--image_file', default='/home/images/')
+    parser.add_argument('--model_weights',
+                        default='/opt/caffe/models/VGGNet/TV_LOGO/SSD_TV_LOGO_300x300/VGG_TV_LOGO_SSD_TV_LOGO_300x300_iter_1002.caffemodel')
+    # parser.add_argument('--image_file', default='/home/images/')
     return parser.parse_args()
 
 

@@ -82,10 +82,10 @@ remove_old_models = False
 
 # The database file for training data. Created by data/VOC0712/4_create_data.sh
 # train_data = "examples/VOC0712/VOC0712_trainval_lmdb"
-train_data = "/root/data/VOCdevkit/TV_LOGO_Dataset/lmdb/TV_LOGO_Dataset_trainval_lmdb"
+train_data = "/home/data/VOCdevkit/TV_LOGO_Dataset/lmdb/TV_LOGO_Dataset_trainval_lmdb"
 # The database file for testing data. Created by data/VOC0712/4_create_data.sh
 # test_data = "examples/VOC0712/VOC0712_test_lmdb"
-test_data = "/root/data/VOCdevkit/TV_LOGO_Dataset/lmdb/TV_LOGO_Dataset_test_lmdb"
+test_data = "/home/data/VOCdevkit/TV_LOGO_Dataset/lmdb/TV_LOGO_Dataset_test_lmdb"
 # Specify the batch sampler.
 resize_width = 300
 resize_height = 300
@@ -267,11 +267,11 @@ name_size_file = "/opt/caffe/data/VOCdevkit/TV_LOGO_Dataset/test_name_size.txt"
 pretrain_model = "models/VGGNet/VGG_ILSVRC_16_layers_fc_reduced.caffemodel"
 # label_map_file文件路径
 # label_map_file = "data/VOC0712/labelmap_voc.prototxt"
-label_map_file = "/root/data/VOCdevkit/TV_LOGO_Dataset/labelmap_voc.prototxt"
+label_map_file = "/home/data/VOCdevkit/TV_LOGO_Dataset/labelmap_voc.prototxt"
 
 # MultiBoxLoss parameters.
 # 类别数量
-num_classes = 22
+num_classes = 65
 share_location = True
 background_label_id = 0
 train_on_diff_gt = True
@@ -365,7 +365,7 @@ elif normalization_mode == P.Loss.FULL:
 
 # Evaluate on whole test set.
 # 在测试集上评估
-num_test_image = 8796  # 测试集数量
+num_test_image = 21490  # 测试集数量
 test_batch_size = 16
 # Ideally test_batch_size should be divisible by num_test_image,
 # otherwise mAP will be slightly off the true value.

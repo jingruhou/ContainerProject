@@ -1,0 +1,375 @@
+item {
+  name: "none_of_the_above"
+  label: 0
+  display_name: "background"
+}
+item {
+  name: "cctv1" #综合频道
+  label: 1
+  display_name: "cctv1"
+}
+item {
+  name: "cctv2" #财经频道 
+  label: 2
+  display_name: "cctv2"
+}
+item {
+  name: "cctv3"  #综艺频道
+  label: 3
+  display_name: "cctv3"
+}
+item {
+  name: "cctv4"  #中文国际
+  label: 4
+  display_name: "cctv4"
+}
+item {
+  name: "cctv5"  #体育频道
+  label: 5
+  display_name: "cctv5"
+}
+item {
+  name: "cctv5+"  #体育赛事
+  label: 6
+  display_name: "cctv5+"
+}
+item {
+  name: "cctv6"   #电影频道
+  label: 7
+  display_name: "cctv6"
+}
+item {
+  name: "cctv7"   #国防军事
+  label: 8
+  display_name: "cctv7"
+}
+item {
+  name: "cctv8"   #电视剧
+  label: 9
+  display_name: "cctv8"
+}
+item {
+  name: "cctv9"   #记录
+  label: 10
+  display_name: "cctv9"
+}
+item {
+  name: "cctv10"  #科教频道
+  label: 11
+  display_name: "cctv10"
+}
+item {
+  name: "cctv11"  #戏曲频道
+  label: 12
+  display_name: "cctv11"
+}
+item {
+  name: "cctv12"  #社会与法
+  label: 13
+  display_name: "cctv12"
+}
+item {
+  name: "cctv13"  #新闻频道
+  label: 14
+  display_name: "cctv13"
+}
+item {
+  name: "cctv14"  #少儿频道
+  label: 15
+  display_name: "cctv14"
+}
+item {
+  name: "cctv15"  #音乐频道
+  label: 16
+  display_name: "cctv15"
+}
+item {
+  name: "cctv17"  #农业农村
+  label: 17
+  display_name: "cctv17"
+}
+item {
+  name: "cetv1"  #教育1
+  label: 18
+  display_name: "cetv1"
+}
+item {
+  name: "cetv2"  #教育2
+  label: 19
+  display_name: "cetv2"
+}
+item {
+  name: "cetv3"  #教育3
+  label: 20
+  display_name: "cetv3"
+}
+item {
+  name: "cetv4"  #教育4
+  label: 21
+  display_name: "cetv4"
+}
+item {
+  name: "cgtn-ayu" #国际阿语频道
+  label: 22
+  display_name: "cgtn-ayu"
+}
+item {
+  name: "cgtn-eyu" #国际俄语频道
+  label: 23
+  display_name: "cgtn-eyu"
+}
+item {
+  name: "cgtn-fayu" #国际法语频道
+  label: 24
+  display_name: "cgtn-fayu"
+}
+item {
+  name: "cgtn-jilu" #国际记录频道
+  label: 25
+  display_name: "cgtn-jilu"
+}
+item {
+  name: "cgtn-news" #国际新闻频道
+  label: 26
+  display_name: "cgtn-news"
+}
+item {
+  name: "cgtn-xiyu" #国际西语频道
+  label: 27
+  display_name: "cgtn-xiyu"
+}
+item {
+  name: "beijingws"  #北京卫视
+  label: 28
+  display_name: "beijingws"
+}
+item {
+  name: "beijingcj"  #北京财经
+  label: 29
+  display_name: "beijingcj"
+}
+item {
+  name: "beijingkj"  #北京科教
+  label: 30
+  display_name: "beijingkj"
+}
+item {
+  name: "beijingqn"  #北京青年
+  label: 31
+  display_name: "beijingqn"
+}
+item {
+  name: "beijingsh"  #北京生活
+  label: 32
+  display_name: "beijingsh"
+}
+item {
+  name: "beijingwy"  #北京文艺
+  label: 33
+  display_name: "beijingwy"
+}
+item {
+  name: "beijingxw"  #北京新闻
+  label: 34
+  display_name: "beijingxw"
+}
+item {
+  name: "beijingys"  #北京影视
+  label: 35
+  display_name: "beijingys"
+}
+item {
+  name: "beijingdajs"  #北京东奥纪实
+  label: 36
+  display_name: "beijingdajs"
+}
+item {
+  name: "dongfangws"  #东方卫视
+  label: 37
+  display_name: "dongfangws"
+}
+item {
+  name: "diyicaijin"  #第一财经
+  label: 38
+  display_name: "diyicaijin"
+}
+item {
+  name: "tianjinws"   #天津卫视
+  label: 39
+  display_name: "tianjinws"
+}
+item {
+  name: "chongqingws" #重庆卫视
+  label: 40
+  display_name: "chongqingws"
+}
+item {
+  name: "hebeiws"     #河北卫视
+  label: 41
+  display_name: "hebeiws"
+}
+item {
+  name: "guangdongws"   #广东卫视
+  label: 42
+  display_name: "guangdongws"
+}
+item {
+  name: "nanfangws"    #南方卫视
+  label: 43
+  display_name: "nanfangws"
+}
+item {
+  name: "guangzhouws"  #广州卫视
+  label: 44
+  display_name: "guangzhouws"
+}
+item {
+  name: "shenzhenws"  #深圳卫视
+  label: 45
+  display_name: "shenzhenws"
+}
+item {
+  name: "shandongws"  #山东卫视
+  label: 46
+  display_name: "shandongws"
+}
+item {
+  name: "jiangsuws"  #江苏卫视
+  label: 47
+  display_name: "jiangsuws"
+}
+item {
+  name: "zhejiangws"  #浙江卫视
+  label: 48
+  display_name: "zhejiangws"
+}
+item {
+  name: "jiangxiws"  #江西卫视
+  label: 49
+  display_name: "jiangxiws"
+}
+item {
+  name: "dongnanws"  #东南卫视
+  label: 50
+  display_name: "dongnanws"
+}
+item {
+  name: "xiamenws"  #厦门卫视
+  label: 51
+  display_name: "xiamenws"
+}
+item {
+  name: "anhuiws"  #安徽卫视
+  label: 52
+  display_name: "anhuiws"
+}
+item {
+  name: "henanws"  #河南卫视
+  label: 53
+  display_name: "henanws"
+}
+item {
+  name: "heilongjiangws"  #黑龙江卫视
+  label: 54
+  display_name: "heilongjiangws"
+}
+item {
+  name: "liaoningws"  #辽宁卫视
+  label: 55
+  display_name: "liaoningws"
+}
+item {
+  name: "jilinws"  #吉林卫视
+  label: 56
+  display_name: "jilinws"
+}
+item {
+  name: "neimengguws"  #内蒙古卫视
+  label: 57
+  display_name: "neimengguws"
+}
+item {
+  name: "shanxi-1"  #山西卫视
+  label: 58
+  display_name: "shanxi-1"
+}
+item {
+  name: "huanghews"  #黄河卫视
+  label: 59
+  display_name: "huanghews"
+}
+item {
+  name: "shanxi-2"  #陕西卫视
+  label: 60
+  display_name: "shanxi-2"
+}
+item {
+  name: "hubeiws"  #湖北卫视
+  label: 61
+  display_name: "hubeiws"
+}
+item {
+  name: "hunanws"  #湖南卫视
+  label: 62
+  display_name: "hunanws"
+}
+item {
+  name: "sichuanws"  #四川卫视
+  label: 63
+  display_name: "sichuanws"
+}
+item {
+  name: "kangbaws"  #康巴卫视
+  label: 64
+  display_name: "kangbaws"
+}
+item {
+  name: "yunnanws"  #云南卫视
+  label: 65
+  display_name: "yunnanws"
+}
+item {
+  name: "guangxiws"  #广西卫视
+  label: 66
+  display_name: "guangxiws"
+}
+item {
+  name: "guizhouws"  #贵州卫视
+  label: 67
+  display_name: "guizhouws"
+}
+item {
+  name: "gansuws"  #甘肃卫视
+  label: 68
+  display_name: "gansuws"
+}
+item {
+  name: "hainanws"  #海南卫视
+  label: 69
+  display_name: "hainanws"
+}
+item {
+  name: "qinghaiws"  #青海卫视
+  label: 70
+  display_name: "qinghaiws"
+}
+item {
+  name: "ningxiaws"  #宁夏卫视
+  label: 71
+  display_name: "ningxiaws"
+}
+item {
+  name: "xinjiangws"  #新疆卫视
+  label: 72
+  display_name: "xinjiangws"
+}
+item {
+  name: "bingtuanws"  #兵团卫视
+  label: 73
+  display_name: "bingtuanws"
+}
+item {
+  name: "xizangws"  #西藏卫视
+  label: 74
+  display_name: "xizangws"
+}

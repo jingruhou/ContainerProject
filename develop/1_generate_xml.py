@@ -118,7 +118,7 @@ def list_dir(dir_path):
 
 if __name__ == '__main__':
 
-    rootDir = r"E:\1cctv\cetv4\cetv4_9"
+    rootDir = r"E:\HY_TV_LOGO_DATA\tv_video_train\29hainan\hainan_gg_8"
 
     # 1、读取文件夹下面的xml文件,获取各个节点及对应的数据值
     xml_file = glob.glob(rootDir + "\\*.xml")
