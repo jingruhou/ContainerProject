@@ -152,10 +152,9 @@ def main(args):
             ymin = int(round(item[1] * height))
             xmax = int(round(item[2] * width))
             ymax = int(round(item[3] * height))
-            font = ImageFont.truetype('/home/arial.ttf', 22)
+            font = ImageFont.truetype('/home/arial.ttf', 24)
             draw.rectangle([xmin, ymin, xmax, ymax], outline=(255, 0, 0))
-            draw.text([xmin, ymin], item[-1] + " " + str(item[-2]), (0, 0, 255), font=font)
-            #
+            draw.text([xmin, ymin-24], item[-1] + "  " + str(item[-2]), (0, 255, 0), font=font)
 
             print item
             print [xmin, ymin, xmax, ymax]
@@ -174,7 +173,7 @@ def parse_args():
     parser.add_argument('--model_def', default='/opt/caffe/models/VGGNet/TV_LOGO/SSD_TV_LOGO_300x300/deploy.prototxt')
     parser.add_argument('--image_resize', default=300, type=int)
     parser.add_argument('--model_weights',
-                        default='/opt/caffe/models/VGGNet/TV_LOGO/SSD_TV_LOGO_300x300/VGG_TV_LOGO_SSD_TV_LOGO_300x300_iter_1002.caffemodel')
+                        default='/opt/caffe/models/VGGNet/TV_LOGO/SSD_TV_LOGO_300x300/VGG_TV_LOGO_SSD_TV_LOGO_300x300_iter_5195.caffemodel')
     # parser.add_argument('--image_file', default='/home/images/')
     return parser.parse_args()
 
